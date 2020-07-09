@@ -1,0 +1,50 @@
+.wrapper {
+    width: 1190px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.center-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flex-inline {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.flex-left {
+    display: flex;
+    justify-content: left;
+}
+
+a {
+    color: #fff;
+    font-family:"Microsoft Yahei";
+}
+
+.fold-box {
+    text-overflow: ellipsis;
+    display:-webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:2;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+
+

@@ -1,0 +1,80 @@
+footer {
+    padding-top: 30px;
+    color: #fff;
+    background-color: #222;
+}
+
+footer h4 {
+    color: #fefefe;
+    line-height: 50px;
+    border-bottom: 1px solid #333;
+}
+
+footer .link-li li {
+    position: relative;
+    margin-right: 28px;
+}
+
+footer .link-li a, footer .link-li .cj {
+    line-height: 64px;
+    font-size: 12px;
+    color: #7e8086;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+footer .link-li .img-box {
+    position: absolute;
+    left: 110%;
+    top: -60px;
+    transition: 0.2s;
+    opacity: 0;
+}
+
+footer .link-li .img-box::before {
+    content: "";
+    position: absolute;
+    top: 45%;
+    left: -10px;
+    margin-top: -13px;
+    border: 5px solid transparent;
+    border-right-color: #fff;
+}
+
+footer .link-li .cj:hover .img-box {
+    opacity: 1;
+}
+
+footer .link-li .img-box img {
+    height: 200px;
+}
+
+footer .link-li a:hover,  footer .link-li .cj:hover{
+    color: #fff;
+}
+
+footer .addr {
+    padding: 20px 0 40px;
+    font-size: 12px;
+    border-top: 1px solid #333;
+    color: #a1a1a1;
+}
+
+footer .record img{
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+footer .record a, footer .record span {
+    font-size: 12px;
+    color: #a1a1a1;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+footer .record a:hover {
+    color: #fff;
+}
+
