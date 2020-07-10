@@ -1,16 +1,14 @@
 import React, { Fragment } from 'react';
-import './styles/common.css';
-import './styles/rest.css';
-import './body.css'
+import '../body.css'
 
 
 class LinkTab extends React.Component {
     state = {
         links: [
-            {img: require('./images/reopen.png'), path: "###"},
-            {img: require('./images/reopen.png'), path: "###"},
-            {img: require('./images/reopen.png'), path: "###"},
-            {img: require('./images/reopen.png'), path: "###"}
+            {img: require('../../images/reopen.png'), path: "###"},
+            {img: require('../../images/reopen.png'), path: "###"},
+            {img: require('../../images/reopen.png'), path: "###"},
+            {img: require('../../images/reopen.png'), path: "###"}
         ]
     }
     render () {
@@ -30,10 +28,10 @@ class LinkTab extends React.Component {
 class Portal extends React.Component {
     state = {
         links: [
-            {icon: require('./images/portal.png'), path: "###", name: "企业门户", content: "综合资讯、应用选购、订单管理、我的报障"},
-            {icon: require('./images/portal.png'), path: "###", name: "企业门户", content: "综合资讯、应用选购、订单管理、我的报障"},
-            {icon: require('./images/portal.png'), path: "###", name: "企业门户", content: "综合资讯、应用选购、订单管理、我的报障"},
-            {icon: require('./images/portal.png'), path: "###", name: "企业门户", content: "综合资讯、应用选购、订单管理、我的报障"},
+            {icon: require('../../images/portal.png'), path: "###", name: "企业门户", content: "综合资讯、应用选购、订单管理、我的报障"},
+            {icon: require('../../images/portal.png'), path: "###", name: "企业门户", content: "综合资讯、应用选购、订单管理、我的报障"},
+            {icon: require('../../images/portal.png'), path: "###", name: "企业门户", content: "综合资讯、应用选购、订单管理、我的报障"},
+            {icon: require('../../images/portal.png'), path: "###", name: "企业门户", content: "综合资讯、应用选购、订单管理、我的报障"},
         ]
     }
 
@@ -90,7 +88,7 @@ class CoreProduct extends React.Component {
         currentIndex: 0,
         contents: [
             {
-                img: require('./images/base.png'),
+                img: require('../../images/base.png'),
                 href: "###",
                 title: "IIOT平台",
                 decrp: "设备管理、连接管理、边缘计算。",
@@ -107,7 +105,7 @@ class CoreProduct extends React.Component {
                 ], 
                 funcClass: "short"
             },{
-                img: require('./images/base.png'),
+                img: require('../../images/base.png'),
                 title: "IIOT平台",
                 decrp: "设备管理、连接管理、边缘计算。",
                 func: [
@@ -123,7 +121,7 @@ class CoreProduct extends React.Component {
                 ],
                 funcClass: "short"
             },{
-                img: require('./images/base.png'),
+                img: require('../../images/base.png'),
                 title: "IIOT平台",
                 decrp: "设备管理、连接管理、边缘计算。",
                 func: [
@@ -140,7 +138,7 @@ class CoreProduct extends React.Component {
                 funcClass: "short"
             },
             {
-                img: require('./images/base.png'),
+                img: require('../../images/base.png'),
                 title: "行业私有云",
                 decrp: "按照行业特点快速构建行业云，实现行业资源汇聚。",
                 func: [
@@ -189,7 +187,7 @@ class Diagram extends React.Component {
         return (
             <div className="diagram">
                 <div className="wrapper">
-                    <img src={require('./images/diagram.gif')} alt="img"/>
+                    <img src={require('../../images/diagram.gif')} alt="img"/>
                 </div>
             </div>
         );
@@ -209,4 +207,7 @@ export class Outlinks extends React.Component  {
         );
     }
 }
+
+
+export default Outlinks;
 

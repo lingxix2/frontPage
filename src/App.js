@@ -1,10 +1,7 @@
 import React, {Fragment} from 'react';
-import {Header} from './header.js';
-import {BtnUp, SlideBox} from './slide.js';
-import {Outlinks} from './outlink.js';
-import {Select} from './select.js';
-import {Footer} from './footer.js';
+import {Header, BtnUp, SlideBox, Outlinks, Select, Footer} from './components'
 // import { render } from '@testing-library/react';
+
  
 
 

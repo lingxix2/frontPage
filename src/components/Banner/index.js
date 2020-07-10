@@ -1,7 +1,5 @@
 import React from 'react';
-import './styles/common.css';
-import './styles/rest.css';
-import './body.css'
+import '../body.css'
 
 
 
@@ -18,25 +16,25 @@ export class SlideBox extends React.Component {
                     {
                         // id: 1,
                         href: 'https://baidu.com',
-                        img: require('./images/rot1.png')
+                        img: require('../../images/rot1.png')
                     },
                     {
                         // id: 2,
                         href: 'https://sohu.com',
-                        img: require('./images/rot2.png')
+                        img: require('../../images/rot2.png')
                     },
                     {
                         href: 'https://sohu.com',
-                        img: require('./images/rot3.png')
+                        img: require('../../images/rot3.png')
                     },
                     {
                         href: 'https://sohu.com',
-                        img: require('./images/rot5.png')
+                        img: require('../../images/rot5.png')
                     },
                     {
                         // id: 1,
                         href: 'https://baidu.com',
-                        img: require('./images/rot1.png')
+                        img: require('../../images/rot1.png')
                     },
                     
                 ]
@@ -239,7 +237,7 @@ export class BtnUp extends React.Component {
     render () {
         return (
             <div className='btn-up' style={{opacity: this.state.scrollY >= 300 ? 1 : 0}} onClick={this.handleClick}>
-                <img src={require('./images/up.png')} alt='up'/>
+                <img src={require('../../images/up.png')} alt='up'/>
             </div>
         )
     }
