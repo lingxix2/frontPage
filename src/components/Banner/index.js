@@ -237,7 +237,7 @@ export class BtnUp extends React.Component {
     render () {
         return (
             <div className='btn-up' style={{opacity: this.state.scrollY >= 300 ? 1 : 0}} onClick={this.handleClick}>
-                <img src={require('../../images/up.png')} alt='up'/>
+                <img src={require('./up.png')} alt='up'/>
             </div>
         )
     }

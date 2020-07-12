@@ -10,8 +10,8 @@ export class Solution extends React.Component {
             {icon: require('../../images/advantage.png'), text: '先进的云计算技术架构'},
         ],
         func: [
-            {title: '工业内网改造', text: '工业内网是全面支持生产系统的生产网', img: require('../../images/sol_bg.png'), href:'###'},
-            {title: '工业内网改造', text: '工业内网是全面支持生产系统的生产网', img: require('../../images/sol_bg.png'), href:'###'},
+            {title: '工业内网改造', text: '工业内网是全面支持生产系统的生产网', img: require('./sol_bg.png'), href:'###'},
+            {title: '工业内网改造', text: '工业内网是全面支持生产系统的生产网', img: require('./sol_bg.png'), href:'###'},
         ]
     }
     render () {

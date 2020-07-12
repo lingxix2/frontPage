@@ -34,7 +34,7 @@ export class Footer extends React.Component {
                     <div className="wrapper flex-inline">
                         <p>© 2019 安徽长江工业大数据科技股份公司 版权所有 | All rights reserved</p>
                         <div className="record">
-                            <img src={require('../../images/police.png')} alt="img"/>
+                            <img src={require('./police.png')} alt="img"/>
                             <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34070202000398" target="_blank" rel="noopener noreferrer">皖公网安备 34070202000398号</a>
                             <span>皖ICP备19014727号-1</span>
                          </div>

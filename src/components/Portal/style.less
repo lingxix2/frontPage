@@ -7,53 +7,47 @@
 .portal-box li {
     width: 24%;
     cursor: pointer;
-}
 
-.portal-box a {
-    display: flex;
+    a {
+        display: flex;
+        .img-box {
+            /* display: none; */
+            box-sizing: border-box;
+            text-align: center;
+            display: inline-block;
+            border: 2px solid transparent;
+            width: 105px;
+            height: 105px;
 
-}
+            img {
+                width: 100px;
+                vertical-align: middle;
+            }
+        }
 
+        .txt {
+            vertical-align: middle;
+            margin-top: 10px;
+            margin-left: 20px;
 
-.portal-box .img-box {
-    /* display: none; */
-    box-sizing: border-box;
-    text-align: center;
-    display: inline-block;
-    border: 2px solid transparent;
-    width: 105px;
-    height: 105px;
-}
+            h3 {
+                color: #333;
+                font-size: 20px;
+            }
 
-.portal-box img {
-    width: 100px;
-    vertical-align: middle;
-}
+            .content {
+                margin-top: 15px;
+                font-size: 14px;
+                color: #999;
+                letter-spacing: 1px;
+                line-height: 1.7;
+            }
+        }
+    }
 
-.portal-box ul a:hover .img-box {
-    border: 2px solid #000;
-    border-radius: 50%;
-    background-color: #E9F0Fe;
-}
-
-.portal-box .txt {
-    /* display: inline-block; */
-    vertical-align: middle;
-    margin-top: 10px;
-    margin-left: 20px;
-
-}
-
-.portal-box .txt h3 {
-    color: #333;
-    /* margin-top: 15px; */
-    font-size: 20px;
-}
-
-.portal-box .txt .content {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #999;
-    letter-spacing: 1px;
-    line-height: 1.7;
+    a:hover .img-box {
+        border: 2px solid #000;
+        border-radius: 50%;
+        background-color: #E9F0Fe;
+    }
 }
