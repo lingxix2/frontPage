@@ -16,25 +16,25 @@ export class SlideBox extends React.Component {
                     {
                         // id: 1,
                         href: 'https://baidu.com',
-                        img: require('../../images/rot1.png')
+                        img: require('@/images/rot1.png')
                     },
                     {
                         // id: 2,
                         href: 'https://sohu.com',
-                        img: require('../../images/rot2.png')
+                        img: require('@/images/rot2.png')
                     },
                     {
                         href: 'https://sohu.com',
-                        img: require('../../images/rot3.png')
+                        img: require('@/images/rot3.png')
                     },
                     {
                         href: 'https://sohu.com',
-                        img: require('../../images/rot5.png')
+                        img: require('@/images/rot5.png')
                     },
                     {
                         // id: 1,
                         href: 'https://baidu.com',
-                        img: require('../../images/rot1.png')
+                        img: require('@/images/rot1.png')
                     },
                     
                 ]

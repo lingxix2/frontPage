@@ -5,10 +5,10 @@ import './style.less'
 export class Portal extends React.Component {
     state = {
         links: [
-            {icon: require('../../images/portal.png'), path: "###", name: "企业门户", content: "综合资讯、应用选购、订单管理、我的报障"},
-            {icon: require('../../images/portal.png'), path: "###", name: "企业门户", content: "综合资讯、应用选购、订单管理、我的报障"},
-            {icon: require('../../images/portal.png'), path: "###", name: "企业门户", content: "综合资讯、应用选购、订单管理、我的报障"},
-            {icon: require('../../images/portal.png'), path: "###", name: "企业门户", content: "综合资讯、应用选购、订单管理、我的报障"},
+            {icon: require('@/images/portal.png'), path: "###", name: "企业门户", content: "综合资讯、应用选购、订单管理、我的报障"},
+            {icon: require('@/images/portal.png'), path: "###", name: "企业门户", content: "综合资讯、应用选购、订单管理、我的报障"},
+            {icon: require('@/images/portal.png'), path: "###", name: "企业门户", content: "综合资讯、应用选购、订单管理、我的报障"},
+            {icon: require('@/images/portal.png'), path: "###", name: "企业门户", content: "综合资讯、应用选购、订单管理、我的报障"},
         ]
     }
 

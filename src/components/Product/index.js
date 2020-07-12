@@ -32,7 +32,7 @@ export class CoreProduct extends React.Component {
         currentIndex: 0,
         contents: [
             {
-                img: require('../../images/base.png'),
+                img: require('@/images/base.png'),
                 href: "###",
                 title: "IIOT平台",
                 decrp: "设备管理、连接管理、边缘计算。",
@@ -49,7 +49,7 @@ export class CoreProduct extends React.Component {
                 ], 
                 funcClass: "short"
             },{
-                img: require('../../images/base.png'),
+                img: require('@/images/base.png'),
                 title: "IIOT平台",
                 decrp: "设备管理、连接管理、边缘计算。",
                 func: [
@@ -65,7 +65,7 @@ export class CoreProduct extends React.Component {
                 ],
                 funcClass: "short"
             },{
-                img: require('../../images/base.png'),
+                img: require('@/images/base.png'),
                 title: "IIOT平台",
                 decrp: "设备管理、连接管理、边缘计算。",
                 func: [
@@ -82,7 +82,7 @@ export class CoreProduct extends React.Component {
                 funcClass: "short"
             },
             {
-                img: require('../../images/base.png'),
+                img: require('@/images/base.png'),
                 title: "行业私有云",
                 decrp: "按照行业特点快速构建行业云，实现行业资源汇聚。",
                 func: [

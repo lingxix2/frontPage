@@ -26,7 +26,7 @@ export class Footer extends React.Component {
                             </li>)}
                         <li className="cj">
                             <span>长江工业大数据</span>
-                            <div className="img-box"><img src={require('../../images/qrcode_cj.png')} alt="qrcode"/></div>
+                            <div className="img-box"><img src={require('@/images/qrcode_cj.png')} alt="qrcode"/></div>
                         </li>
                     </ul>
                 </div>

@@ -85,7 +85,7 @@ class SubMenu extends React.Component {
           <div className="scan">
             <img src={require("./phone.png")} alt="scan" className="scan-phone"></img>
             <div className="qrcode">
-              <img src={require("../../images/qrcode.png")} alt="qrcode"></img>
+              <img src={require("@/images/qrcode.png")} alt="qrcode"></img>
               <p>扫一扫移动端</p>
             </div>
           </div>
@@ -127,7 +127,7 @@ export class Header extends React.Component {
         <div className='wrapper flex-inline'>
           <div className="flex-inline">
             <a href={"#/"} className="logo-bar">
-              <img className="img-inline" src={require('../../images/logo.png')}  alt=""/>
+              <img className="img-inline" src={require('@/images/logo.png')}  alt=""/>
               <h1>长江云工业互联网平台</h1>
             </a>
             <Menu></Menu>

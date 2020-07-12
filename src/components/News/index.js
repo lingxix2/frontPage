@@ -11,7 +11,7 @@ export class News extends React.Component {
             {time: "2019-03-28 09:25", title: "战略合作！市长出席的这场签约有多重要！", content: "浩鲸科技“朋友圈”持续壮大！今天上午，阿里云副总裁兼浩鲸科技执行董事杨名与铜陵市人民政府市长正式签订战略合作协议并共同为安徽长江工业大数据科技股份有限…", link: "###"},
             {time: "2019-05-24 10:18", title: "干货解读长江云上工厂", content: "干货来袭", link: "###"},
         ],
-        pic: {link: "####", img: require('../../images/news.jpg'), name:"重磅！浩鲸科技建设的安徽省第一个工业互联网标识解析二级节点正式上线！"},
+        pic: {link: "####", img: require('@/images/news.jpg'), name:"重磅！浩鲸科技建设的安徽省第一个工业互联网标识解析二级节点正式上线！"},
         more: "###"
     }
     render () {
