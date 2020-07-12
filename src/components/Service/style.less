@@ -1,0 +1,111 @@
+
+.container {
+    padding: 87px 0 95px;
+
+}
+
+.container .app-list{
+    margin-top: 60px;
+    height: 476px;
+}
+
+.container .application {
+    width: 24.6%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.container .application a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.container .img-box {
+    width: 130px;
+    height: 130px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 116px;
+    padding-top: 45px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 30;
+    transition: 0.2s;
+    opacity: 1;
+}
+
+
+.container .application h4{
+    /* z-index: 30; */
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-top: 30px;
+    padding: 0 30px;
+    transition: 0.2s;
+    z-index: 30;
+    opacity: 1;
+}
+
+.container .application .detail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: rgba(0,0,0,.5);
+    z-index: 40;
+    opacity: 0;
+    transition: 0.2s;
+
+}
+
+.container .application .detail p {
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: 2px;
+    padding: 0 30px;
+    margin-top: 140px;
+
+    -webkit-line-clamp:8;
+}
+
+.container .application::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    background-color: rgba(0, 0, 0, 0.2)
+}
+
+.container .application:hover h4, .container .application:hover .img-box{
+    opacity: 0;
+}
+
+.container .application:hover .detail {
+    opacity: 1;
+}
+
+
+.service .img-box {
+    background: transparent;
+    padding: 0;
+}
+
+.service .img-box img{
+    width: 100%;
+    height: 100%;
+}
+
+.service .application .detail p {
+    -webkit-line-clamp:6;
+}

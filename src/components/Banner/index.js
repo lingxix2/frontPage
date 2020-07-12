@@ -1,5 +1,5 @@
 import React from 'react';
-import '../body.css'
+import './style.less'
 
 
 
@@ -164,7 +164,7 @@ export class SlideBox extends React.Component {
         let slickItem = []
         console.log(this.state.left, this.state.now);
         for (let i = 0; i < this.len; i++) {
-            slickItem.push(<li className={i === (this.state.now % this.len) ? "active" : "in-act"} onClick={()=>this.handleTabClick(i)} key={i}></li>);
+            slickItem.push(<li className={i === (this.state.now % this.len) ? "active" : "inact"} onClick={()=>this.handleTabClick(i)} key={i}></li>);
         }
 
         return (

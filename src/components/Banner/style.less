@@ -1,0 +1,112 @@
+.carousel-box {
+    position: relative;
+    height: 490px;
+    overflow: hidden;
+
+    .left-btn, .right-btn {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 50%;
+        margin-top: -51px;
+        z-index: 5;
+        opacity: 0;
+        background-color: rgba(0,0,0,.5);
+        border-radius: 50%;
+        transition: opacity .5s linear;
+        cursor: pointer;
+    }
+
+    .left-btn {
+        left: 150px;
+    }
+    
+    .right-btn {
+        right: 150px;
+    }
+
+    .slide-bar {
+        position: absolute;
+        display: flex;
+
+        .slide-elem {
+            top: 0;
+            a {
+                display: inline-block;
+            }
+        }
+    }
+
+    .slick-bar {
+        position: absolute;
+        bottom: 50px;
+        font-size: 0;
+        text-align: center;
+        height: 3px;
+        width: 100%;
+        z-index: 10;
+
+        li {
+            display: inline-block;
+            position:relative;
+            width: 16px;
+            height: 100%;
+            margin: 0 2px;
+            padding: 0;
+            opacity: 0.3;
+            background-color: #fff;
+            transition: .2s;
+            cursor: pointer;
+        }
+
+        .inact:hover {
+            opacity: 0.75;
+        }
+
+        .active {
+            width: 24px;
+            opacity: 1;
+        }
+    }
+}
+
+
+
+.carousel-box:hover {
+    .left-btn, .right-btn{
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+.btn-up {
+    position: fixed;
+    bottom: 50px;
+    right: 100px;
+    box-sizing: border-box;
+    background-color: rgba(0,0,0,.45);
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    padding-top: 12px;
+    transition: 0.2s;
+    text-align: center;
+    border-radius: 50%;
+    z-index: 999;
+
+    img {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.btn-up:hover {
+    background-color: rgba(0, 0, 0, .6);
+}
+

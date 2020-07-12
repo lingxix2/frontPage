@@ -1,5 +1,5 @@
 import React from 'react';
-import './header.less';
+import './style.less';
 
 
 
@@ -83,7 +83,7 @@ class SubMenu extends React.Component {
         {this.state.links.map((item, i) => <li className="submenu-item" key={i}><a href={item.href}>{item.name}</a></li>)}
         <li className="submenu-item">
           <div className="scan">
-            <img src={require("../../images/phone.png")} alt="scan" className="scan-phone"></img>
+            <img src={require("./phone.png")} alt="scan" className="scan-phone"></img>
             <div className="qrcode">
               <img src={require("../../images/qrcode.png")} alt="qrcode"></img>
               <p>扫一扫移动端</p>
