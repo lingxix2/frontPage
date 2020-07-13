@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.less';
-
+import {Link} from "react-router-dom"
 
 
 class Menu extends React.Component {
@@ -16,7 +16,7 @@ class Menu extends React.Component {
       },
       {
         name: "应用中心",
-        href: "###",
+        href: "/appCenter",
         dropList: [],
       },
       {
@@ -56,7 +56,7 @@ class Menu extends React.Component {
             return <li className='drop-row' key={i}>
                 <span>{item.name}</span>
                 <ul className="drop-list">
-                  {item.dropList.map((v, j) => <li key={j}><a href={v.href}>{v.name}</a></li>)}
+                  {item.dropList.map((v, j) => <li key={j}><Link href={v.href}>{v.name}</Link></li>)}
                 </ul>         
             </li>
           }
@@ -100,7 +100,7 @@ export class Header extends React.Component {
 
   constructor(props){
     super(props)
-    this.state = {backgroundColor: 'rgba(34, 34, 34, .5)'};
+    this.state = {backgroundColor: 'rgba(34, 34, 34, .5)',};
     this.handleScroll = this.handleScroll.bind(this);
 
   }
@@ -126,7 +126,7 @@ export class Header extends React.Component {
       <header className="header" style={{backgroundColor:this.state.backgroundColor}}>
         <div className='wrapper flex-inline'>
           <div className="flex-inline">
-            <a href={"#/"} className="logo-bar">
+            <a href='/home' className="logo-bar">
               <img className="img-inline" src={require('@/images/logo.png')}  alt=""/>
               <h1>长江云工业互联网平台</h1>
             </a>

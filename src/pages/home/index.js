@@ -1,7 +1,5 @@
 import React, {Fragment} from 'react';
-import Header from '@/sharedComponents/Header'
-import BtnUp from '@/sharedComponents/BtnUp'
-import Footer from '@/sharedComponents/Footer'
+import {Header, BtnUp, Footer} from '@/components'
 import {SlideBox, LinkTab, Portal, CoreProduct, Diagram, Application, Solution, Service, Case, News} from './components'
 // import { render } from '@testing-library/react';
 

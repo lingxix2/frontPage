@@ -1,7 +1,5 @@
 import React, {Fragment} from 'react'
-import Header from '@/sharedComponents/Header'
-import BtnUp from '@/sharedComponents/BtnUp'
-import Footer from '@/sharedComponents/Footer'
+import {Header, Footer, BtnUp} from '@/components'
 import {Banner, Content} from './components'
 
 export class AppCenter extends React.Component {
