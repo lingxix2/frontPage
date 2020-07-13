@@ -5,7 +5,7 @@ import {Header, BtnUp, SlideBox, LinkTab, Portal, CoreProduct, Diagram, Applicat
  
 
 
-class App extends React.Component {
+class Home extends React.Component {
 
   
   render () {
@@ -31,4 +31,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default Home;
