@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.less'
-import { Banner } from '../../app_center';
+// import { Banner } from '../../app_center';
 
 
 
@@ -191,7 +191,7 @@ export class SlideBox extends React.Component {
     }
 }
 
-export default Banner;
+export default SlideBox;
 
 
 

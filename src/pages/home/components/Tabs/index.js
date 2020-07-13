@@ -4,10 +4,10 @@ import './style.less'
 export class LinkTab extends React.Component {
     state = {
         links: [
-            {img: require('../../images/reopen.png'), path: "###"},
-            {img: require('../../images/reopen.png'), path: "###"},
-            {img: require('../../images/reopen.png'), path: "###"},
-            {img: require('../../images/reopen.png'), path: "###"}
+            {img: require('@/images/reopen.png'), path: "###"},
+            {img: require('@/images/reopen.png'), path: "###"},
+            {img: require('@/images/reopen.png'), path: "###"},
+            {img: require('@/images/reopen.png'), path: "###"}
         ]
     }
     render () {

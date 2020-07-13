@@ -1,29 +1,21 @@
 import React, {Fragment} from 'react';
-import {Header, BtnUp, SlideBox, LinkTab, Portal, CoreProduct, Diagram, Application, Solution, Service, Case, News, Footer} from '@/components'
+
+import Home from '@/pages/home'
+import AppCenter from '@/pages/appCenter'
+// import {Header, BtnUp, SlideBox, LinkTab, Portal, CoreProduct, Diagram, Application, Solution, Service, Case, News, Footer} from '@/components'
 // import { render } from '@testing-library/react';
 
  
 
 
-class Home extends React.Component {
+class App extends React.Component {
 
   
   render () {
     return (
       <Fragment>
-        <Header/>
-        <SlideBox/>
-        <LinkTab/>
-        <Portal/>
-        <CoreProduct/>
-        <Diagram/>
-        <Application/>
-        <Solution/>
-        <Service/>
-        <Case/>
-        <News/>
-        <Footer/>
-        <BtnUp/>
+        <Home/>
+        <AppCenter/>
       </Fragment>
       
       
@@ -31,4 +23,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default App;

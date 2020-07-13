@@ -5,9 +5,9 @@ import './style.less'
 export class Solution extends React.Component {
     state = {
         adv : [
-            {icon: require('../../images/advantage.png'), text: '先进的云计算技术架构'},
-            {icon: require('../../images/advantage.png'), text: '先进的云计算技术架构'},
-            {icon: require('../../images/advantage.png'), text: '先进的云计算技术架构'},
+            {icon: require('@/images/advantage.png'), text: '先进的云计算技术架构'},
+            {icon: require('@/images/advantage.png'), text: '先进的云计算技术架构'},
+            {icon: require('@/images/advantage.png'), text: '先进的云计算技术架构'},
         ],
         func: [
             {title: '工业内网改造', text: '工业内网是全面支持生产系统的生产网', img: require('./sol_bg.png'), href:'###'},
@@ -22,7 +22,7 @@ export class Solution extends React.Component {
                     <div className="soln flex-inline">
                         <a className="monitor" href="###">
                             <div className="img-box">
-                                <img src={require('../../images/soln.png')} alt="img"/>
+                                <img src={require('@/images/soln.png')} alt="img"/>
                             </div>
                             <div className="cont-box">
                                 <h4>智慧配电大数据监管平台解决方案</h4>
