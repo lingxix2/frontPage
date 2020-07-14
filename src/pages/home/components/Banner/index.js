@@ -153,8 +153,8 @@ export class SlideBox extends React.Component {
                     <div className="slide-bar" style={{left: this.state.left+'px'}} onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut}>
                         {this.props.links.map((item, i) => 
                             <div className="slide-elem" key={i}>
-                                <a href={item.href}>
-                                    <img src={item.img} style={{width:this.width+'px'}} alt={i}/>
+                                <a href={item.url}>
+                                    <img src={item.image} style={{width:this.width+'px'}} alt={i}/>
                                 </a>
                             </div>)}
                         

@@ -12,29 +12,22 @@ export class Case extends React.Component {
         ]
     }
     render () {
-        
-        if (this.props.cases !== undefined) {
-            return (
-                <div className="case-bg">
-                    <div className="wrapper">
-                        <h3 className="title">精选典型案例</h3>
-                        <ul className="case-list flex-inline">
-                            {this.props.cases.map((item, i) => 
-                                <li className="case" style={{backgroundImage:this.state.casesBg[i]}} key={i}>
-                                    <a href={item.href} >
-                                        <div className="name fold-box">{item.name}</div>
-                                    </a>
-                                </li>)}
-                        </ul>
-                    </div>
+        return (
+            <div className="case-bg">
+                <div className="wrapper">
+                    <h3 className="title">精选典型案例</h3>
+                    <ul className="case-list flex-inline">
+                        {this.props.cases.map((item, i) => 
+                            <li className="case" style={{backgroundImage:this.state.casesBg[i]}} key={i}>
+                                <a href={'/case-detail/'+item.id} >
+                                    <div className="name fold-box">{item.title}</div>
+                                </a>
+                            </li>)}
+                    </ul>
                 </div>
-            );
-        }
-        else {
-            return (
-                <div className="case-bg"></div>
-            )
-        }
+            </div>
+        );
+
     }
 }
 

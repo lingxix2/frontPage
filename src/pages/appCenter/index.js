@@ -1,22 +1,17 @@
 import React, {Fragment} from 'react'
 import {Header, Footer, BtnUp} from '@/components'
 import {Banner, Content} from './components'
-import postAjax from '@/assets/js/ajax.js'
+import postContentReq from './api'
 
 export class AppCenter extends React.Component {
-    
-    state = {pageSize: [8, 16], now: 0, sizeIdx: 0}
-
     constructor(props){
         super(props);
         this.state = {
-            
             pageSizes: [8, 16],
             sizeIdx: 0,
             now: 0,
+            loading: true
         }
-
-        this.contentUrl = '/api/v1/application/selectAllIndustrialApp';
 
         this.handlePageClick = this.handlePageClick.bind(this);
         this.handlePrevClick = this.handlePrevClick.bind(this);
@@ -26,59 +21,72 @@ export class AppCenter extends React.Component {
     }
     
     handlePageNumClick (idx) {
-        postAjax(this.contentUrl, JSON.stringify({pageNum: 1, pageSize: this.state.pageSizes[idx]}), this.getAppData);
-        this.setState({sizeIdx: idx, now: 0})
+        postContentReq({pageNum: 1, pageSize: this.state.pageSizes[idx]}, (res)=> {
+            this.setState(
+                {now: 0,
+                 sizeIdx: idx,
+                 appLink: res.list,
+                 pages: res.pages
+            });
+        });
     }
 
     handlePageClick (idx) {
-        postAjax(this.contentUrl, JSON.stringify({pageNum: idx+1, pageSize: this.state.pageSizes[this.state.sizeIdx]}), this.getAppData);
-        this.setState({now: idx});
+        postContentReq({pageNum: idx+1, pageSize: this.state.pageSizes[this.state.sizeIdx]}, (res)=> {
+            this.setState(
+                {now: idx,
+                 appLink: res.list,
+                 pages: res.pages
+            });
+        });
     }
 
     handlePrevClick () {
         if (this.state.now === 0) return;
         else {
-            postAjax(this.contentUrl, JSON.stringify({pageNum: this.state.now, pageSize: this.state.pageSizes[this.state.sizeIdx]}), this.getAppData);
-            this.setState((prevState) => ({now: prevState.now-1}));
+            postContentReq({pageNum: this.state.now, pageSize: this.state.pageSizes[this.state.sizeIdx]}, (res)=> {
+                this.setState((prevState) => (
+                    {now: prevState.now-1,
+                     appLink: res.list,
+                     pages: res.pages
+                }));
+            });
+            
         }
     }
 
     handleNextClick () {
         if (this.state.now === this.state.total-1) return;
         else {
-            postAjax(this.contentUrl, JSON.stringify({pageNum: this.state.now+2, pageSize: this.state.pageSizes[this.state.sizeIdx]}), this.getAppData);
-            this.setState((prevState) => ({now: prevState.now+1}));
+            postContentReq({pageNum: this.state.now+2, pageSize: this.state.pageSizes[this.state.sizeIdx]}, (res)=> {
+                this.setState((prevState) => (
+                    {now: prevState.now+1,
+                     appLink: res.list,
+                     pages: res.pages
+                }));
+            });
         }
     }
-
-    getAppData = (data) => {
-        let appLink = []
-        const li = data.list;
-        for (let i = 0; i < li.length; i++) {
-            let item = {};
-            item.href = '#/app-center-detail/'+li[i].id;
-            item.img = li[i].cover;
-            item.name = li[i].name;
-            item.func = li[i].domainName;
-            appLink.push(item);
-        }
-        let pages = data.pages;
-        this.setState({
-          appLink,
-          pages
-        })
-    }
-
-
-
 
     componentDidMount () {
-        postAjax(this.contentUrl, JSON.stringify({pageNum: 1, pageSize: 8}), this.getAppData)
+        let app = null;
+        postContentReq({pageNum: 1, pageSize: 8}, (res)=> {
+            app = res;
+            this.setState({
+                appLink: app.list,
+                pages: app.pages,
+                loading: false
+            });
+        });
+        
+        console.log(this.state.loading, this.state.appLink, this.state.pages)
 
     }
 
     render() {
-        const {appLink, pages, now, sizeIdx} = this.state
+        const {appLink, pages, now, sizeIdx, loading} = this.state
+        if (appLink===undefined) return <div>loading...</div>
+        console.log(loading)
         return (
             <Fragment>
                 <Header/>
