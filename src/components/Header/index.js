@@ -56,7 +56,7 @@ class Menu extends React.Component {
             return <li className='drop-row' key={i}>
                 <span>{item.name}</span>
                 <ul className="drop-list">
-                  {item.dropList.map((v, j) => <li key={j}><Link href={v.href}>{v.name}</Link></li>)}
+                  {item.dropList.map((v, j) => <li key={j}><Link to={v.href}>{v.name}</Link></li>)}
                 </ul>         
             </li>
           }
@@ -126,10 +126,10 @@ export class Header extends React.Component {
       <header className="header" style={{backgroundColor:this.state.backgroundColor}}>
         <div className='wrapper flex-inline'>
           <div className="flex-inline">
-            <a href='/home' className="logo-bar">
+            <Link to='/home' className="logo-bar">
               <img className="img-inline" src={require('@/images/logo.png')}  alt=""/>
               <h1>长江云工业互联网平台</h1>
-            </a>
+            </Link>
             <Menu></Menu>
           </div>
           <SubMenu></SubMenu> 

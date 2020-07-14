@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.less'
-// import { Banner } from '../../app_center';
+
 
 
 
@@ -13,38 +13,13 @@ export class SlideBox extends React.Component {
             left: 0,
             right: 0,
             mouseOver: true,
-            links: [ 
-                    {
-                        // id: 1,
-                        href: 'https://baidu.com',
-                        img: require('@/images/rot1.png')
-                    },
-                    {
-                        // id: 2,
-                        href: 'https://sohu.com',
-                        img: require('@/images/rot2.png')
-                    },
-                    {
-                        href: 'https://sohu.com',
-                        img: require('@/images/rot3.png')
-                    },
-                    {
-                        href: 'https://sohu.com',
-                        img: require('@/images/rot5.png')
-                    },
-                    {
-                        // id: 1,
-                        href: 'https://baidu.com',
-                        img: require('@/images/rot1.png')
-                    },
-                    
-                ]
+            
         };
+        
         this.timer = null;
         this.slideTimer = null;
         this.handleSlide = this.handleSlide.bind(this);
         this.move = this.move.bind(this);
-        this.len = this.state.links.length - 1;
         this.width = document.documentElement.clientWidth;
         this.handleMouseOver = this.handleMouseOver.bind(this);
         this.handleMouseOut = this.handleMouseOut.bind(this);
@@ -90,12 +65,12 @@ export class SlideBox extends React.Component {
             // wrap around
             if (goNext && target < -this.len * this.width) {
                 this.setState({left: 0, now: step})
-                console.log('wrap right')
+                // console.log('wrap right')
                 target = -this.width * step;
             } else if (!goNext && target > 0) {
                 //console.log("before setState:", this.state.left, this.state.now)
-                this.setState({left: -(this.len*this.width), now: this.len+step});
-                console.log('wrap left')
+                this.setState({left: -(this.props.links.length*this.width), now: this.props.links.length+step});
+                // console.log('wrap left')
                 // this.setState({left: -this.len * this.step, now: this.len-1}, () => console.log(this.state.left, this.state.now));
                 //console.log("after setState:", this.state.left, this.state.now)
 
@@ -121,7 +96,7 @@ export class SlideBox extends React.Component {
         if (this.timer) clearInterval(this.timer);
         else this.timer = null;
 
-        console.log("start slide")
+        // console.log("start slide")
 
         this.timer = setInterval(function () {
             if (this.state.mouseOver) clearInterval(this.timer)
@@ -144,7 +119,7 @@ export class SlideBox extends React.Component {
 
     handleMouseOut () {
         this.setState({mouseOver: false});
-        // this.handleSlide();
+        this.handleSlide();
     }
 
 
@@ -156,38 +131,48 @@ export class SlideBox extends React.Component {
     handleRightClick = () => this.move(1, 6);
 
     handleTabClick (idx) {
-        let step = idx - this.state.now % this.len;
+        let step = idx - this.state.now % this.props.links.length;
         this.move(step, 6);
     }
 
+    
+
+    
 
     render () {
-        let slickItem = []
-        console.log(this.state.left, this.state.now);
-        for (let i = 0; i < this.len; i++) {
-            slickItem.push(<li className={i === (this.state.now % this.len) ? "active" : "inact"} onClick={()=>this.handleTabClick(i)} key={i}></li>);
+        // console.log(this.props)
+        if (this.props.links.length > 0) {
+            
+            let slickItem = []
+            // console.log(this.state.left, this.state.now);
+            for (let i = 0; i < this.props.links.length; i++) {
+                slickItem.push(<li className={i === (this.state.now % this.props.links.length) ? "active" : "inact"} onClick={()=>this.handleTabClick(i)} key={i}></li>);
+            }
+            return (
+                <div className="carousel-box">
+                    <div className="slide-bar" style={{left: this.state.left+'px'}} onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut}>
+                        {this.props.links.map((item, i) => 
+                            <div className="slide-elem" key={i}>
+                                <a href={item.href}>
+                                    <img src={item.img} style={{width:this.width+'px'}} alt={i}/>
+                                </a>
+                            </div>)}
+                        
+                    </div> 
+                    <ul className="slick-bar">
+                        {slickItem}
+                    </ul>
+                    <div className="left-btn" onClick={this.handleLeftClick} onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut}></div>
+                    <div className="right-btn" onClick={this.handleRightClick} onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut}></div>
+                </div>
+            );
+        } else {
+            return (
+            <div className="carousel-box">
+                <div className="slide-bar"></div>
+            </div>);
         }
 
-        return (
-            <div className="carousel-box">
-                <div className="slide-bar" style={{left: this.state.left+'px'}} onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut}>
-                    {this.state.links.map((item, i) => 
-                        <div className="slide-elem" key={i}>
-                            <a href={item.href}>
-                                <img src={item.img} style={{width:this.width+'px'}} alt={i}/>
-                            </a>
-                        </div>)}
-                    
-                </div> 
-                <ul className="slick-bar">
-                    {slickItem}
-                </ul>
-                <div className="left-btn" onClick={this.handleLeftClick} onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut}></div>
-                <div className="right-btn" onClick={this.handleRightClick} onMouseOver={this.handleMouseOver} onMouseOut={this.handleMouseOut}></div>
-            </div>
-             
-
-        );
     }
 }
 

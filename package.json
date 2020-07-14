@@ -137,7 +137,9 @@
       "react-app"
     ]
   },
+  "proxy": "http://iwillcloud.com",
   "devDependencies": {
+    "http-proxy-middleware": "^1.0.5",
     "less": "^3.11.3",
     "less-loader": "^6.2.0"
   }
