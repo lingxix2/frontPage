@@ -8,49 +8,38 @@ export class Content extends Component {
         this.state = {
             
             itemPerPage: [8, 16],
-            currNum: 0,
-            now: 0,
+            // currNum: 0,
+            // now: 0,
             dropOn: false,
         }
         this.handleDropClick = this.handleDropClick.bind(this);
-        this.handleSelectClick = this.handleSelectClick.bind(this);
-        this.handlePrevClick = this.handlePrevClick.bind(this);
-        this.handleNextClick = this.handleNextClick.bind(this);
-        this.handlePageClick = this.handlePageClick.bind(this);
+        this.clickCancelDrop = this.clickCancelDrop.bind(this);
 
     }
     
 
     getPageList (num) {
-        // let num = Math.ceil(this.state.appList.length/this.state.ItemPerPage[this.state.currNum]);
         let pageList = []
         for (let i = 0; i < num; i++) {
             pageList.push(<li key={i} className={`page-num ${i===this.props.now ? 'page-active' : ''}`} onClick={()=>this.props.pClick(i)}>{i+1}</li>);
         }
         // console.log(pageList.map((_, i) => <li key={i} className={`page-num ${i===this.state.now ? 'active' : ''}`}>i+1</li>));
-        console.log(pageList);
+        // console.log(pageList);
         return pageList;
     }
 
     handleDropClick = () => this.setState((prevState) => ({dropOn: !prevState.dropOn}));
-    handleSelectClick (idx) {
-        this.setState({currNum: idx})
+    
+
+    clickCancelDrop (e) {
+        if (e.target === document.getElementsByClassName('content')[0] && this.state.dropOn) {
+            this.setState({dropOn: false})
+        }
     }
 
-    handlePrevClick () {
-        // console.log(this.now);
-        if (this.state.now === 0) return;
-        else this.setState((prevState) => ({now: prevState.now-1}));
+    componentDidMount () {
+        document.addEventListener('click', this.clickCancelDrop)
     }
-
-    handleNextClick (num) {
-        if (this.state.now === num-1) return;
-        else this.setState((prevState) => ({now: prevState.now+1}));
-    }
-
-    handlePageClick (idx) {
-        this.setState({now: idx});
-    } 
 
 
 

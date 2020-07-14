@@ -52,7 +52,6 @@ export class AppCenter extends React.Component {
     }
 
     getAppData = (data) => {
-        console.log(data)
         let appLink = []
         const li = data.list;
         for (let i = 0; i < li.length; i++) {
