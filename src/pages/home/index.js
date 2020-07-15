@@ -2,10 +2,6 @@ import React, {Fragment} from 'react';
 import {Header, BtnUp, Footer} from '@/components'
 import {SlideBox, LinkTab, Portal, CoreProduct, Diagram, Application, Solution, Service, Case, News} from './components'
 import {postBannerReq, postNewsReq, postCaseReq} from './api'
-// import { render } from '@testing-library/react';
-
-
-
 
 
 class Home extends React.Component {

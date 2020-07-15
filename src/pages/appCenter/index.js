@@ -91,7 +91,13 @@ export class AppCenter extends React.Component {
             <Fragment>
                 <Header/>
                 <Banner/>
-                <Content appList={appLink} pages={pages} now={now} sizeIdx={sizeIdx} pNumClick={this.handlePageNumClick} pClick={this.handlePageClick} prevClick={this.handlePrevClick} nextClick={this.handleNextClick}/>
+                <Content appList={appLink} 
+                         pages={pages} now={now} 
+                         sizeIdx={sizeIdx} 
+                         pNumClick={this.handlePageNumClick} 
+                         pClick={this.handlePageClick} 
+                         prevClick={this.handlePrevClick} 
+                         nextClick={this.handleNextClick}/>
                 <BtnUp/>
                 <Footer/>
             </Fragment>
