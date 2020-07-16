@@ -13,30 +13,28 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    let bannerLink, newsLink, caseLink = [];
-    postBannerReq(null, (res) => {
-      bannerLink = res;
-      postNewsReq({}, (res) => {
-        newsLink = res.list;
-        postCaseReq({pageNum: 1, pageSize: 4}, (res) => {
-          caseLink = res.list;
-          this.setState({
-            bannerLink,
-            newsLink,
-            caseLink,
-            loading: false,
-          })
-        })
-      })
-    })
-
-
+    Promise.all([
+      postBannerReq({}), 
+      postNewsReq({}),
+      postCaseReq({pageNum:1, pageSize:4})]
+    ).then(([res1, res2, res3]) =>
+      this.setState({
+        bannerLink: res1, 
+        newsLink: res2.list, 
+        caseLink: res3.list,
+        loading:false,})
+    );
   }
+    
   
   render () {
     const {bannerLink, newsLink, caseLink, loading} = this.state
     if (loading) return <div>loading...</div>
-    // console.log(newsLink)
+
+    // console.log(bannerLink, newsLink, caseLink)
+
+    
+
     return (
       <Fragment>
         <Header/>

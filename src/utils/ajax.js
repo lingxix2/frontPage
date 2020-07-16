@@ -15,6 +15,29 @@ export function postAjax(url, input, fnSucc, fnFail, ) {
     
 }
 
+export function postJSON (url, input) {
+    const promise = new Promise(function(resolve, reject){
+      const xml = new XMLHttpRequest();
+      xml.open("POST", url, true);
+      xml.onreadystatechange = function() {
+        if (this.readyState !== 4) {
+          return;
+        }
+        if (this.status === 200) {
+            resolve(this.response.data);
+        } else {
+          reject(new Error(this.statusText));
+        }
+      };
+      xml.responseType = "json";
+      xml.setRequestHeader("Content-Type", "application/json");
+      xml.send(JSON.stringify(input));
+  
+    });
+  
+    return promise;
+  };
+
 export function getAjax(url, fnSucc, fnFail) {
     let xml = new XMLHttpRequest() 
     xml.open('GET', url, true); 

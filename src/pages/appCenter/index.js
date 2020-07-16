@@ -21,65 +21,63 @@ export class AppCenter extends React.Component {
     }
     
     handlePageNumClick (idx) {
-        postContentReq({pageNum: 1, pageSize: this.state.pageSizes[idx]}, (res)=> {
-            this.setState(
-                {now: 0,
-                 sizeIdx: idx,
-                 appLink: res.list,
-                 pages: res.pages
-            });
-        });
+        postContentReq({pageNum: 1, pageSize: this.state.pageSizes[idx]}).then(
+            (res)=>this.setState({
+                now: 0,
+                sizeIdx: idx,
+                appLink: res.list,
+                pages: res.pages
+            })
+        )
+
+        
     }
 
     handlePageClick (idx) {
-        postContentReq({pageNum: idx+1, pageSize: this.state.pageSizes[this.state.sizeIdx]}, (res)=> {
-            this.setState(
-                {now: idx,
-                 appLink: res.list,
-                 pages: res.pages
-            });
-        });
+        postContentReq({pageNum: idx+1, pageSize: this.state.pageSizes[this.state.sizeIdx]}).then(
+            (res)=>this.setState({
+                now: idx,
+                appLink: res.list,
+                pages: res.pages
+            })
+        )
     }
 
     handlePrevClick () {
         if (this.state.now === 0) return;
         else {
-            postContentReq({pageNum: this.state.now, pageSize: this.state.pageSizes[this.state.sizeIdx]}, (res)=> {
-                this.setState((prevState) => (
-                    {now: prevState.now-1,
-                     appLink: res.list,
-                     pages: res.pages
-                }));
-            });
+            postContentReq({pageNum: this.state.now, pageSize: this.state.pageSizes[this.state.sizeIdx]}).then(
+                (res)=>this.setState((prevState) => ({
+                    now: prevState.now-1,
+                    appLink: res.list,
+                    pages: res.pages
+                }))
+            )
             
         }
     }
 
     handleNextClick () {
-        if (this.state.now === this.state.total-1) return;
+        if (this.state.now === this.state.pages-1) return;
         else {
-            postContentReq({pageNum: this.state.now+2, pageSize: this.state.pageSizes[this.state.sizeIdx]}, (res)=> {
-                this.setState((prevState) => (
-                    {now: prevState.now+1,
-                     appLink: res.list,
-                     pages: res.pages
-                }));
-            });
+            postContentReq({pageNum: this.state.now+2, pageSize: this.state.pageSizes[this.state.sizeIdx]}).then(
+                (res)=>this.setState((prevState) => ({
+                    now: prevState.now+1,
+                    appLink: res.list,
+                    pages: res.pages
+                }))
+            )
         }
     }
 
     componentDidMount () {
-        let app = null;
-        postContentReq({pageNum: 1, pageSize: 8}, (res)=> {
-            app = res;
-            this.setState({
-                appLink: app.list,
-                pages: app.pages,
+        postContentReq({pageNum: 1, pageSize: 8}).then(
+            (res)=>this.setState({
+                appLink: res.list,
+                pages: res.pages,
                 loading: false
-            });
-        });
-        
-        console.log(this.state.loading, this.state.appLink, this.state.pages)
+            })
+        )
 
     }
 
