@@ -52,8 +52,7 @@ export class AppCenter extends React.Component {
                     appLink: res.list,
                     pages: res.pages
                 }))
-            )
-            
+            )  
         }
     }
 
@@ -83,8 +82,8 @@ export class AppCenter extends React.Component {
 
     render() {
         const {appLink, pages, now, sizeIdx, loading} = this.state
-        if (appLink===undefined) return <div>loading...</div>
-        console.log(loading)
+        if (loading) return <div>loading...</div>
+        // console.log(loading)
         return (
             <Fragment>
                 <Header/>

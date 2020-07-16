@@ -31,10 +31,6 @@ class Home extends React.Component {
     const {bannerLink, newsLink, caseLink, loading} = this.state
     if (loading) return <div>loading...</div>
 
-    // console.log(bannerLink, newsLink, caseLink)
-
-    
-
     return (
       <Fragment>
         <Header/>

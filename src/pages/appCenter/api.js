@@ -1,8 +1,8 @@
-import {postJSON} from '@/utils/ajax.js';
+import {postFetch} from '@/utils/ajax.js';
 
 
 // const postContentReq = (input={}, callback) => postAjax('/api/v1/application/selectAllIndustrialApp', input, callback);
-const postContentReq = (input={}) => postJSON('/api/v1/application/selectAllIndustrialApp', input);
+const postContentReq = (input={}) => postFetch('/api/v1/application/selectAllIndustrialApp', input);
 
 
 

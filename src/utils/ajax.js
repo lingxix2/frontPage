@@ -36,7 +36,20 @@ export function postJSON (url, input) {
     });
   
     return promise;
-  };
+};
+
+
+export function postFetch (url, input={}) {
+    return (fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(input),
+        headers: new Headers({
+            'Content-Type': 'application/json'
+        })
+    }))
+    .then(res => res.json())
+    .then(res => res.data)
+}
 
 export function getAjax(url, fnSucc, fnFail) {
     let xml = new XMLHttpRequest() 
