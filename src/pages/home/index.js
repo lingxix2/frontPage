@@ -12,18 +12,29 @@ class Home extends React.Component {
     loading: true
   }
 
-  componentDidMount() {
-    Promise.all([
-      postBannerReq({}), 
-      postNewsReq({}),
-      postCaseReq({pageNum:1, pageSize:4})]
-    ).then(([res1, res2, res3]) =>
-      this.setState({
-        bannerLink: res1, 
-        newsLink: res2.list, 
-        caseLink: res3.list,
-        loading:false,})
-    );
+  async componentDidMount() {
+    let bannerLink, newsLink, caseLink = []
+    // Axios.all([
+    //   postBannerReq({}), 
+    //   postNewsReq({}),
+    //   postCaseReq({pageNum:1, pageSize:4})]
+    // ).then(([res1, res2, res3]) =>
+    //   this.setState({
+    //     bannerLink: res1, 
+    //     newsLink: res2.list, 
+    //     caseLink: res3.list,
+    //     loading:false,})
+    // );
+    await postBannerReq({}).then(res=>bannerLink=res);
+    await postNewsReq({}).then(res=>newsLink=res.list);
+    await postCaseReq({pageNum:1, pageSize:4}).then(res=>caseLink=res.list)
+    
+    this.setState({
+      bannerLink,
+      newsLink,
+      caseLink,
+      loading:false,
+    })
   }
     
   

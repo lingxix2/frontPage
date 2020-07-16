@@ -1,7 +1,7 @@
-import {postFetch} from '@/utils/ajax.js';
+import Https from '@/utils/https.js'
 
 
-const postContentReq = (input={}) => postFetch('/api/v1/application/selectAllIndustrialApp', input);
+const postContentReq = (params={}) => Https('/api/v1/application/selectAllIndustrialApp', 'post', params);
 
 
 

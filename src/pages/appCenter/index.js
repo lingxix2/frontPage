@@ -20,8 +20,8 @@ export class AppCenter extends React.Component {
 
     }
     
-    handlePageNumClick (idx) {
-        postContentReq({pageNum: 1, pageSize: this.state.pageSizes[idx]}).then(
+    async handlePageNumClick (idx) {
+        await postContentReq({pageNum: 1, pageSize: this.state.pageSizes[idx]}).then(
             (res)=>this.setState({
                 now: 0,
                 sizeIdx: idx,
@@ -33,8 +33,8 @@ export class AppCenter extends React.Component {
         
     }
 
-    handlePageClick (idx) {
-        postContentReq({pageNum: idx+1, pageSize: this.state.pageSizes[this.state.sizeIdx]}).then(
+    async handlePageClick (idx) {
+        await postContentReq({pageNum: idx+1, pageSize: this.state.pageSizes[this.state.sizeIdx]}).then(
             (res)=>this.setState({
                 now: idx,
                 appLink: res.list,
@@ -43,10 +43,10 @@ export class AppCenter extends React.Component {
         )
     }
 
-    handlePrevClick () {
+    async handlePrevClick () {
         if (this.state.now === 0) return;
         else {
-            postContentReq({pageNum: this.state.now, pageSize: this.state.pageSizes[this.state.sizeIdx]}).then(
+            await postContentReq({pageNum: this.state.now, pageSize: this.state.pageSizes[this.state.sizeIdx]}).then(
                 (res)=>this.setState((prevState) => ({
                     now: prevState.now-1,
                     appLink: res.list,
@@ -56,10 +56,10 @@ export class AppCenter extends React.Component {
         }
     }
 
-    handleNextClick () {
+    async handleNextClick () {
         if (this.state.now === this.state.pages-1) return;
         else {
-            postContentReq({pageNum: this.state.now+2, pageSize: this.state.pageSizes[this.state.sizeIdx]}).then(
+             await postContentReq({pageNum: this.state.now+2, pageSize: this.state.pageSizes[this.state.sizeIdx]}).then(
                 (res)=>this.setState((prevState) => ({
                     now: prevState.now+1,
                     appLink: res.list,
@@ -69,8 +69,8 @@ export class AppCenter extends React.Component {
         }
     }
 
-    componentDidMount () {
-        postContentReq({pageNum: 1, pageSize: 8}).then(
+    async componentDidMount () {
+        await postContentReq({pageNum: 1, pageSize: 8}).then(
             (res)=>this.setState({
                 appLink: res.list,
                 pages: res.pages,

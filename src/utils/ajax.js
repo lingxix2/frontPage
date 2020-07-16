@@ -39,13 +39,15 @@ export function postJSON (url, input) {
 };
 
 
-export function postFetch (url, input={}) {
+export function postFetch (url, params) {
+    console.log(params)
     return (fetch(url, {
         method: 'POST',
-        body: JSON.stringify(input),
+        body: JSON.stringify(params),
         headers: new Headers({
             'Content-Type': 'application/json'
-        })
+        }),
+        mode: 'no-cors',
     }))
     .then(res => res.json())
     .then(res => res.data)
