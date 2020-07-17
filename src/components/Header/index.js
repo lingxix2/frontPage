@@ -16,7 +16,7 @@ class Menu extends React.Component {
       },
       {
         name: "应用中心",
-        href: "/appCenter",
+        href: "#/appCenter",
         dropList: [],
       },
       {
@@ -133,7 +133,7 @@ export class Header extends React.Component {
             <Menu></Menu>
           </div>
           <SubMenu></SubMenu> 
-        </div>  
+        </div> 
       </header>
     );
   }

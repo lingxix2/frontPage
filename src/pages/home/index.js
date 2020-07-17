@@ -4,6 +4,7 @@ import {SlideBox, LinkTab, Portal, CoreProduct, Diagram, Application, Solution, 
 import {postBannerReq, postNewsReq, postCaseReq} from './api'
 
 
+
 class Home extends React.Component {
   state = {
     bannerLink: [],
@@ -13,6 +14,8 @@ class Home extends React.Component {
   }
 
   async componentDidMount() {
+    // console.log(this.props.history.location, this.props.location, this.props.history.length)
+
     let bannerLink, newsLink, caseLink = []
     // Axios.all([
     //   postBannerReq({}), 
@@ -46,6 +49,7 @@ class Home extends React.Component {
       <Fragment>
         <Header/>
         <SlideBox links={bannerLink}/>
+        <button onClick={(e)=>this.props.history.push('/appCenter')}>应用中心</button>
         <LinkTab/>
         <Portal/>
         <CoreProduct/>

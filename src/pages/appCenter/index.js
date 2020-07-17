@@ -3,6 +3,7 @@ import {Header, Footer, BtnUp} from '@/components'
 import {Banner, Content} from './components'
 import postContentReq from './api'
 
+
 export class AppCenter extends React.Component {
     constructor(props){
         super(props);
@@ -70,6 +71,8 @@ export class AppCenter extends React.Component {
     }
 
     async componentDidMount () {
+        document.title = "应用中心"
+        console.log(this.props.history.location, this.props.location, this.props.history.length)
         await postContentReq({pageNum: 1, pageSize: 8}).then(
             (res)=>this.setState({
                 appLink: res.list,
